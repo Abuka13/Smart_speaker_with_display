@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1124</width>
+    <width>1170</width>
     <height>867</height>
    </rect>
   </property>
@@ -58,12 +58,39 @@ background-color: rgba(1, 1, 64,0.7);
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../Downloads/house_115210.png</normaloff>../../../../Downloads/house_115210.png</iconset>
+      <normaloff>pictures/House-31.png</normaloff>pictures/House-31.png</iconset>
     </property>
     <property name="iconSize">
      <size>
       <width>60</width>
       <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="camera">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(1, 1, 64,0.7);
+border-radius:20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>pictures/5904483.png</normaloff>pictures/5904483.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>90</width>
+      <height>90</height>
      </size>
     </property>
    </widget>
@@ -113,8 +140,8 @@ background-color: rgba(1, 1, 64,0.7);
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>20</y>
+      <x>440</x>
+      <y>10</y>
       <width>101</width>
       <height>71</height>
      </rect>
@@ -127,7 +154,7 @@ background-color: rgba(1, 1, 64,0.7);
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../Downloads/5546241.png</normaloff>../../../../Downloads/5546241.png</iconset>
+      <normaloff>pictures/pngtree-cloudy-weather-forecast-cloud-overcast-png-image_5246453.png</normaloff>pictures/pngtree-cloudy-weather-forecast-cloud-overcast-png-image_5246453.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -139,10 +166,10 @@ background-color: rgba(1, 1, 64,0.7);
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>40</y>
-      <width>101</width>
-      <height>31</height>
+      <x>540</x>
+      <y>10</y>
+      <width>171</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -165,7 +192,7 @@ background-color: rgba(1, 1, 64,0.7);
      <rect>
       <x>190</x>
       <y>30</y>
-      <width>191</width>
+      <width>221</width>
       <height>51</height>
      </rect>
     </property>
@@ -209,12 +236,12 @@ border-radius:20px;
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Downloads/1_2851.png</normaloff>../../../../Downloads/1_2851.png</iconset>
+     <normaloff>pictures/Earth_Western_Hemisphere_transparent_background.png</normaloff>pictures/Earth_Western_Hemisphere_transparent_background.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>300</width>
-     <height>300</height>
+     <width>200</width>
+     <height>200</height>
     </size>
    </property>
   </widget>
@@ -261,7 +288,7 @@ border-radius:20px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../Downloads/262592.png</normaloff>../../../../Downloads/262592.png</iconset>
+      <normaloff>pictures/play-button.png</normaloff>pictures/play-button.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -291,7 +318,7 @@ border-radius:20px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../Downloads/free-icon-pause-button-7782587.png</normaloff>../../../../Downloads/free-icon-pause-button-7782587.png</iconset>
+      <normaloff>pictures/pause.png</normaloff>pictures/pause.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -321,7 +348,7 @@ border-radius:20px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../Downloads/free-icon-left-arrow-5397010.png</normaloff>../../../../Downloads/free-icon-left-arrow-5397010.png</iconset>
+      <normaloff>pictures/rewind-button.png</normaloff>pictures/rewind-button.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -351,7 +378,7 @@ border-radius:20px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../../Downloads/free-icon-forward-button-4767746.png</normaloff>../../../../Downloads/free-icon-forward-button-4767746.png</iconset>
+      <normaloff>pictures/forward-button.png</normaloff>pictures/forward-button.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -410,7 +437,7 @@ border-radius:20px;
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Downloads/1384060.png</normaloff>../../../../Downloads/1384060.png</iconset>
+     <normaloff>pictures/Youtube_logo.png</normaloff>pictures/Youtube_logo.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -443,7 +470,7 @@ border-radius:20px;
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Downloads/2111463.png</normaloff>../../../../Downloads/2111463.png</iconset>
+     <normaloff>pictures/Instagram_icon.png</normaloff>pictures/Instagram_icon.png</iconset>
    </property>
    <property name="iconSize">
     <size>

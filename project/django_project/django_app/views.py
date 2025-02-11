@@ -1,43 +1,58 @@
-from django.http import HttpResponse
-from django.shortcuts import render
 from django.shortcuts import redirect
+from django.http import HttpResponse
 import requests
 from bs4 import BeautifulSoup
+
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/102.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
 }
+
+
 def get_weather(request):
-    response = requests.get("https://www.gismeteo.kz/weather-astana-5164/", headers=headers).text
+    url = "https://www.gismeteo.kz/weather-astana-5164/now/"
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
 
-    sep1 = '<div class="date">Сейчас</div>'
-    text2 = response.split(sep=sep1)[1]
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-    sep2 = '</div></div><svg class'
-    arr3 = text2.split(sep=sep2)
-    text3 = arr3[0]
+        # Ищем элемент temperature-value
+        temp_element = soup.find('temperature-value', attrs={'from-unit': 'c'})
+        if temp_element:
+            temp_value = temp_element.get('value', 'N/A')
+        else:
+            temp_value = "N/A"
 
-    sep3 = 'class="unit unit_temperature_c">'
-    text4 = text3.split(sep=sep3)[1::]
+        # Ищем время
+        time_element = soup.find('div', class_='now-localdate')
+        time = time_element.text.strip() if time_element else "N/A"
 
-    time_sep = '<div class="day" data-pattern="G:i">'
-    time = text3.split(sep=time_sep)[1].split('</div>')[0]
+        # Добавим дополнительную информацию о погоде
+        feel_temp_element = soup.find('div', class_='now-feel').find('temperature-value')
+        feel_temp = feel_temp_element.get('value', 'N/A') if feel_temp_element else "N/A"
 
-    temp_sign = text4[0].split('</span>')[0][-1]
+        desc_element = soup.find('div', class_='now-desc')
+        weather_desc = desc_element.text.strip() if desc_element else "N/A"
 
+        # Формируем ответ
+        response_text = (
+            f"{temp_value[:]}°C\n"
+        )
 
-    temp_value = text4[1].split('<span class="sign">')[0]
-    temp_value = text4[0].split('</span>')[1]
+        print(response_text)  # Для отладки
+        return HttpResponse(response_text.replace('\n', '<br>'), content_type='text/html')
 
-    print(f"Время: {time}")
-    print(f"Знак температуры: {temp_sign}")
-    print(f"Значение температуры: {temp_value}")
-
-    return HttpResponse(f"{time},{temp_sign},{temp_value}")
+    except requests.RequestException as e:
+        print(f"Ошибка при запросе: {e}")
+        return HttpResponse("Ошибка при подключении к сервису погоды.")
+    except Exception as e:
+        print(f"Общая ошибка: {e}")
+        return HttpResponse("Ошибка при получении данных о погоде.")
 
 
 def youtube(request):
     return redirect('https://www.youtube.com')
+
 
 def instagram(request):
     return redirect('https://www.instagram.com')
